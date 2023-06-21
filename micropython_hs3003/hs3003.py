@@ -14,7 +14,6 @@ MicroPython Driver for the Renesas HS3003 Temperature and Humidity Sensor
 """
 
 import time
-from micropython import const
 
 try:
     from typing import Tuple
@@ -83,14 +82,14 @@ class HS3003:
         msb_humidity = data[0] & 0x3F
         lsb_humidity = data[1]
         raw_humidity = msb_humidity << 8 | lsb_humidity
-        humidity = (raw_humidity / (2 ** 14 - 1)) * 100
+        humidity = (raw_humidity / (2**14 - 1)) * 100
 
         msb_temperature = data[2]
         lsb_temperature = (data[3] & 0xFC) >> 2
         raw_temperature = msb_temperature << 6 | lsb_temperature
-        temperature = (raw_temperature / (2 ** 14 - 1)) * 165 - 40
+        temperature = (raw_temperature / (2**14 - 1)) * 165 - 40
 
-        return temperature,  humidity
+        return temperature, humidity
 
     @property
     def relative_humidity(self) -> float:
