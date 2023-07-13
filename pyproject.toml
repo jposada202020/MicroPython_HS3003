@@ -20,13 +20,10 @@ authors = [
 urls = {Homepage = "https://github.com/jposada202020/MicroPython_HS3003"}
 keywords = [
     "sensor",
-    "micropython",
     "hs3003",
     "micropython",
     "driver",
-    "temperature",
     "rensesas",
-    "hs3003",
     "temperature",
     "humidity",
     "sensor",
