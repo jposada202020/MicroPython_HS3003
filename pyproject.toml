@@ -3,21 +3,15 @@
 # SPDX-License-Identifier: MIT
 
 [build-system]
-requires = [
-    "setuptools",
-    "wheel",
-    "setuptools-scm",
-]
+requires = ["setuptools", "wheel", "setuptools-scm"]
 
 [project]
 name = "micropython-hs3003"
 description = "MicroPython Driver for the Renesas HS3003 Temperature and Humidity Sensor"
 version = "0.0.0+auto.0"
 readme = "README.rst"
-authors = [
-    {name = "JDM", email = "xxyx@mailmeto.mozmail.com"}
-]
-urls = {Homepage = "https://github.com/jposada202020/MicroPython_HS3003"}
+authors = [{ name = "JDM", email = "xxyx@mailmeto.mozmail.com" }]
+urls = { Homepage = "https://github.com/jposada202020/MicroPython_HS3003" }
 keywords = [
     "sensor",
     "hs3003",
@@ -26,9 +20,8 @@ keywords = [
     "rensesas",
     "temperature",
     "humidity",
-    "sensor",
 ]
-license = {text = "MIT"}
+license = { text = "MIT" }
 classifiers = [
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Libraries",
@@ -43,4 +36,4 @@ dynamic = ["dependencies", "optional-dependencies"]
 packages = ["micropython_hs3003"]
 
 [tool.setuptools.dynamic]
-dependencies = {file = ["requirements.txt"]}
+dependencies = { file = ["requirements.txt"] }

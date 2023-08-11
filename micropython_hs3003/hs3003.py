@@ -13,12 +13,11 @@ MicroPython Driver for the Renesas HS3003 Temperature and Humidity Sensor
 
 """
 
-import time
-
 try:
     from typing import Tuple
 except ImportError:
     pass
+import time
 
 __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/jposada202020/MicroPython_HS3003.git"
@@ -32,8 +31,6 @@ class HS3003:
 
     :param ~machine.I2C i2c: The I2C bus the HS3003 is connected to.
     :param int address: The I2C device address. Defaults to :const:`0x44`
-
-    :raises RuntimeError: if the sensor is not found
 
     **Quickstart: Importing and using the device**
 
@@ -82,12 +79,12 @@ class HS3003:
         msb_humidity = data[0] & 0x3F
         lsb_humidity = data[1]
         raw_humidity = msb_humidity << 8 | lsb_humidity
-        humidity = (raw_humidity / (2**14 - 1)) * 100
+        humidity = (raw_humidity / (2**14.0 - 1)) * 100
 
         msb_temperature = data[2]
         lsb_temperature = (data[3] & 0xFC) >> 2
         raw_temperature = msb_temperature << 6 | lsb_temperature
-        temperature = (raw_temperature / (2**14 - 1)) * 165 - 40
+        temperature = (raw_temperature / (2**14.0 - 1)) * 165 - 40
 
         return temperature, humidity
 
