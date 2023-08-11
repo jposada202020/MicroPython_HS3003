@@ -11,7 +11,7 @@ hs = hs3003.HS3003(i2c)
 
 while True:
     temperature, relative_humidity = hs.measurements
-    print(f"Temperature: {temperature:.1f}C")
+    print(f"Temperature: {temperature:.1f}°C")
     print(f"Humidity: {relative_humidity:.1f}%")
     print("")
     time.sleep(1)
